@@ -26,7 +26,7 @@ const staffData = [
     romaji: 'Aoki Aiichiro',
     position: '取締役CMO',
     //description: '起業しました！',
-    longDescription: '福井大学教育学部に在学中。\n\n教育実習を通じて学習困難を抱える子どもたちの支援に関心を持ち、テクノロジーを活用した新しい教育のあり方を探求。\n\n株式会社ミナカノでは、子どもたち一人ひとりに寄り添った教育コンテンツの企画・開発を担当している。',
+    longDescription: '福井高専 電子情報工学科 卒業\n福井高専 工学部 電気電子情報工学科 編入学\n福井大学大学院 工学研究科 知識社会基礎工学専攻 在学',
     image: CMO,
     hoverImage: CMO2
   },
@@ -36,7 +36,7 @@ const staffData = [
     romaji: 'Abe Tomoaki',
     position: '取締役COO',
     //description: '起業しました！',
-    longDescription: '福井大学大学院工学研究科博士前期課程産業創成工学専攻に在学中。\n\nプログラミングやシステム開発に精通し、効率的な事業運営の仕組み構築を得意とする。\n\n株式会社ミナカノでは、最新テクノロジーを活用したサービス開発と事業戦略の実行を担当。',
+    longDescription: '福井高専 電子情報工学科 卒業\n福井高専 工学部 電気電子情報工学科 編入学\n福井大学大学院 工学研究科 知識社会基礎工学専攻 在学',
     image: COO,
     hoverImage: COO2
   },

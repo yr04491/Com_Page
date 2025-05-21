@@ -75,18 +75,46 @@
   text-align: left;
 }
 
+/* 名前から下線を削除 */
 .staff-modal-name {
   font-size: 2.2rem;
-  margin-bottom: 5px;
+  margin-bottom: 1px;
   color: #333;
-  text-align: left; /* 左寄せを明示的に指定 */
+  text-align: left !important; /* 強制的に左寄せ */
+  display: block; /* ブロック要素として表示 */
+  width: 100%; /* 幅を100%に */
 }
 
+/* ローマ字に下線を追加 */
 .staff-modal-romaji {
   font-size: 1rem;
   color: #666;
-  margin-bottom: 15px;
+  margin-bottom: 20px; /* 余白を増やして下線との間隔を確保 */
   text-align: left; /* 左寄せ */
+  position: relative; /* 疑似要素のための位置指定 */
+  padding-bottom: 15px; /* 下線のためのスペース */
+  display: block;
+  width: 100%;
+}
+
+/* ローマ字の下に短い線を追加 */
+.staff-modal-romaji::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0; /* 左寄せ */
+  width: 500px; /* 短い線の長さ */
+  height: 2px; /* 線の太さ */
+  background-color: #0088cc; /* 線の色 */
+}
+
+/* 既存の疑似要素を無効化 */
+.section h2::after,
+h2::after,
+h3::after,
+.staff-modal-name::after,
+.staff-modal-name::before {
+  display: none !important; /* 既存の疑似要素を全て無効化 */
 }
 
 .staff-modal-position {
@@ -94,6 +122,7 @@
   color: #0088cc;
   font-weight: 600;
   margin-bottom: 20px;
+  text-align: left; /* 左寄せに変更 */
 }
 
 .staff-modal-social {
@@ -139,7 +168,7 @@
 
 /* src/components/Member/StaffModal.css に追加 */
 .staff-modal-description p {
-  /*margin-bottom: 12px;*/
+  margin-bottom: 12px;
   line-height: 1.8;
   color: #333;
 }
@@ -235,10 +264,26 @@
   }
 
   .staff-modal-info {
-    text-align: center;
+    text-align: left; /* モバイル表示でも左寄せ */
+  }
+  
+  .staff-modal-name,
+  .staff-modal-romaji,
+  .staff-modal-position {
+    text-align: left !important;
+  }
+
+  .staff-modal-name {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  /* モバイル表示でもローマ字の下の線を左寄せに */
+  .staff-modal-romaji::after {
+    left: 0;
   }
 
   .staff-modal-social {
-    justify-content: center;
+    justify-content: flex-start; /* 左寄せに変更 */
   }
 }
