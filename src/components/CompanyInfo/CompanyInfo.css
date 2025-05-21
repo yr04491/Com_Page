@@ -1,0 +1,30 @@
+.company-info-section {
+  background-color: #f8f9fa;
+}
+
+.company-info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.company-info-table th, .company-info-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.company-info-table th {
+  width: 30%;
+  background-color: #f5f6fa;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .company-info-table th, .company-info-table td {
+    padding: 10px;
+  }
+  
+  .company-info-table th {
+    width: 40%;
+  }
+}

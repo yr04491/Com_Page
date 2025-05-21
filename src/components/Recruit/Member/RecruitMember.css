@@ -1,0 +1,98 @@
+.recruit-member-section {
+  background-color: white;
+}
+
+.recruit-member-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.recruit-member-item {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recruit-member-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.recruit-member-item h3 {
+  color: #0088cc;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.recruit-position-details {
+  padding: 10px 0;
+}
+
+.recruit-description {
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.recruit-member-item h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.skill-list {
+  padding-left: 20px;
+}
+
+.skill-list li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 15px;
+  line-height: 1.6;
+}
+
+.skill-list li::before {
+  content: "•";
+  color: #fa5c2a;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.recruit-apply-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.apply-button {
+  display: inline-block;
+  background-color: #fa5c2a;
+  color: white;
+  font-weight: bold;
+  padding: 15px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 10px rgba(250, 92, 42, 0.2);
+}
+
+.apply-button:hover {
+  background-color: #e84c20;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(250, 92, 42, 0.3);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .recruit-member-item {
+    padding: 20px;
+  }
+  
+  .recruit-member-item h3 {
+    font-size: 1.5rem;
+  }
+}

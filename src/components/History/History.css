@@ -1,0 +1,43 @@
+.history-section {
+  background-color: #f8f9fa;
+}
+
+.history-list {
+  list-style-type: none;
+  position: relative;
+  padding-left: 30px;
+}
+
+.history-list li {
+  position: relative;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  line-height: 1.6;
+}
+
+.history-list li:before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  background-color: #fa5c2a;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.history-list li:after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 12px;
+  height: 100%;
+  width: 2px;
+  background-color: #eee;
+  z-index: 1;
+}
+
+.history-list li:last-child:after {
+  display: none;
+}

@@ -1,0 +1,21 @@
+.mission-section {
+  background-color: white;
+}
+
+.mission-section h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mission-section p {
+  text-align: center;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .mission-section h3 {
+    font-size: 1.8rem;
+  }
+}

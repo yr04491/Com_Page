@@ -1,0 +1,49 @@
+/*src/components/Member/Member.css*/
+.member-section {
+  background-color: white;
+}
+
+.member-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.member-tab {
+  padding: 10px 30px;
+  margin: 0 10px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.member-tab:hover {
+  background-color: #e5e5e5;
+}
+
+.member-tab.active {
+  background-color: #fa5c2a;
+  color: white;
+  box-shadow: 0 2px 8px rgba(250, 92, 42, 0.2);
+}
+
+.member-content {
+  position: relative;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .member-tabs {
+    flex-direction: row;
+    margin-bottom: 30px;
+  }
+  
+  .member-tab {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}

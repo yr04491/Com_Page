@@ -1,0 +1,156 @@
+/* src/components/Member/Staff.css */
+.staff-section {
+  display: none;
+}
+
+.staff-section.active {
+  display: block;
+  animation: fadeIn 0.5s;
+}
+
+.staff-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.staff-content {
+  text-align: center;
+}
+
+.staff-content > p {
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* スタッフグリッドの中央揃え - Flexboxを使用 */
+.staff-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 30px;
+  justify-content: center; /* 水平方向中央揃え */
+}
+
+/* 各カードの幅を設定 - 最大3つまで横に並ぶように設定 */
+.staff-card {
+  flex: 0 0 calc(33.333% - 25px); /* 幅を33.333%に設定、gapを引く */
+  max-width: 280px; /* 最大幅を設定 */
+  min-width: 250px; /* 最小幅を設定 */
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+}
+
+.staff-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* クリック時の効果を追加 */
+.staff-card:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+}
+
+.staff-photo {
+  margin-bottom: 15px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.staff-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+/* ホバーエフェクト時のアニメーション */
+.staff-photo:hover img {
+  transform: scale(1.05);
+}
+
+.staff-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.staff-info h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.staff-position {
+  color: #fa5c2a;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.staff-description {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* アクセシビリティ向上のためのフォーカススタイル */
+.staff-card:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 136, 204, 0.3), 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 画像切り替えアニメーション */
+@keyframes imageSwap {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 992px) {
+  .staff-card {
+    flex: 0 0 calc(50% - 25px); /* タブレットでは2列に */
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  .staff-card {
+    flex: 0 0 100%; /* スマホでは1列に */
+    max-width: 280px;
+  }
+  
+  .staff-section h3 {
+    font-size: 1.5rem;
+  }
+}
