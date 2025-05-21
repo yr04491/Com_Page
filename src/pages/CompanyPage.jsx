@@ -44,14 +44,14 @@ const CompanyPage = () => {
    */
   const scrollToMemberSubSection = (subSection) => {
     setActiveMemberSection(subSection);
-    
+
     // Member セクション全体にスクロール
     if (memberRef && memberRef.current) {
       const header = headerRef.current;
       const headerHeight = header ? header.offsetHeight : 0;
       const targetPosition = memberRef.current.getBoundingClientRect().top;
       const offset = targetPosition + window.pageYOffset - headerHeight - 20;
-      
+
       window.scrollTo({
         top: offset,
         behavior: 'smooth'
@@ -87,29 +87,29 @@ const CompanyPage = () => {
       // recruit: recruitRef,
       contact: contactRef
     };
-    
+
     // 指定されたセクションに対応するrefを取得
     let ref = refs[section];
-    
+
     // 関数の場合は実行結果を取得
     if (typeof ref === 'function') {
       ref = ref();
     }
-    
+
     // refが存在し、DOM要素を参照している場合のみ処理を実行
     if (ref && ref.current) {
       // ヘッダー要素を取得
       const header = headerRef.current;
-      
+
       // ヘッダーの高さを取得
       const headerHeight = header ? header.offsetHeight : 0;
-      
+
       // ターゲット要素までの垂直距離を取得
       const targetPosition = ref.current.getBoundingClientRect().top;
-      
+
       // スクロールすべき距離を計算
       const offset = targetPosition + window.pageYOffset - headerHeight - 20;
-      
+
       // スムーズにスクロール
       window.scrollTo({
         top: offset,
@@ -122,15 +122,15 @@ const CompanyPage = () => {
     <div className="company-page">
       <Header ref={headerRef} scrollToSection={scrollToSection} />
       <Hero />
-      <CompanyInfo ref={companyInfoRef} />
+      <AboutCompany ref={aboutCompanyRef} />
       <Mission ref={missionRef} />
       <Vision ref={visionRef} />
-      <AboutCompany ref={aboutCompanyRef} />
+      <CompanyInfo ref={companyInfoRef} />
       {/*<Officers ref={officersRef} />*/}
       <History ref={historyRef} />
       <Services ref={servicesRef} />
-      <Member 
-        ref={memberRef} 
+      <Member
+        ref={memberRef}
         staffRef={staffRef}
         characterRef={characterRef}
         activeSubSection={activeMemberSection}

@@ -13,8 +13,8 @@ const staffData = [
   {
     id: 1,
     name: '田濃 一翔',
-    romaji: 'TANO Kazuto',
-    position: 'CEO',
+    romaji: 'Tano Kazuto',
+    position: '代表取締役CEO',
     //description: '起業しました！',
     longDescription: '頑張ってます！',
     image: CEO,
@@ -23,8 +23,8 @@ const staffData = [
   {
     id: 2,
     name: '⻘⽊ 愛⼀郎',
-    romaji: 'AOKI Aiitiro',
-    position: 'CMO',
+    romaji: 'Aoki Aiichiro',
+    position: '取締役CMO',
     //description: '起業しました！',
     longDescription: '頑張ってます！',
     image: CMO,
@@ -33,8 +33,8 @@ const staffData = [
   {
     id: 3,
     name: '安倍 誠明',
-    romaji: 'ABE Tomoaki',
-    position: 'COO',
+    romaji: 'Abe Tomoaki',
+    position: '取締役COO',
     //description: '起業しました！',
     longDescription: '頑張ってます！',
     image: COO,

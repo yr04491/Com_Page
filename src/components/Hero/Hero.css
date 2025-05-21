@@ -1,7 +1,7 @@
 .hero {
   height: 100vh;
   background-color: #f5f5f5;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.jp/1200x800.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../../assets/images/back.png');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -20,12 +20,21 @@
   font-size: 4rem;
   margin-bottom: 20px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  /* 白を明確に指定 */
+  font-weight: 700;
+  /* 太字に */
 }
 
 .hero p {
   font-size: 1.5rem;
   margin-bottom: 30px;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  /* シャドウを強く */
+  color: #ffffff;
+  /* 白を明確に指定 */
+  font-weight: 500;
+  /* やや太字に */
 }
 
 /* レスポンシブ対応 */
@@ -33,7 +42,7 @@
   .hero h1 {
     font-size: 2.5rem;
   }
-  
+
   .hero p {
     font-size: 1.2rem;
   }

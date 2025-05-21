@@ -49,10 +49,10 @@ const Navigation = ({ isOpen, isMobile, activeNav, setActiveNav, handleNavClick,
             </a>
             {expandedMenus.about && (
               <div className="dropdown-menu">
-                <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('company-info'); }}>会社概要</a>
+                <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('about-company'); }}>会社紹介</a>
                 <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('mission'); }}>Mission</a>
                 <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('vision'); }}>Vision</a>
-                <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('about-company'); }}>会社紹介</a>
+                <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('company-info'); }}>会社概要</a>
                 <a href="#" onClick={(e) => { e.preventDefault(); handleNavClick('history'); }}>沿革</a>
               </div>
             )}
