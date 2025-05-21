@@ -1,0 +1,3 @@
+# Windowsでの例
+cd public
+echo minakano.co.jp > CNAME
