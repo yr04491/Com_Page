@@ -33,7 +33,7 @@ const Staff = forwardRef((props, ref) => {
       >
         <h3>Our Management</h3>
         <div className="staff-content">
-          <p>当社のスタッフは努力しています。</p>
+          <p>経営陣</p>
           
           <div className="staff-grid">
             {staffData.map(staff => (

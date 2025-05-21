@@ -33,7 +33,7 @@ const Character = forwardRef((props, ref) => {
       >
         <h3>Our Professional</h3>
         <div className="character-content">
-          <p>専門的な知識をもとに頑張ってます！</p>
+          <p>開発陣</p>
           
           <div className="staff-grid">
             {professionalData.map(professional => (

@@ -1,8 +1,12 @@
 // src/data/staffData.js
 // スタッフデータを管理する専用ファイル
 // 今後はこのファイルを編集するだけでスタッフの追加・変更・削除が可能
-import CEO from '../assets/images/CEO.png';
-import CEO2 from '../assets/images/TANO.png';
+import CEO from '../assets/images/TANO.png';
+import CEO2 from '../assets/images/TANO_2.png';
+import CMO from '../assets/images/AI.png';
+import CMO2 from '../assets/images/AI_2.png';
+import COO from '../assets/images/ABE.png';
+import COO2 from '../assets/images/ABE_2.png';
 
 
 const staffData = [
@@ -10,8 +14,8 @@ const staffData = [
     id: 1,
     name: '田濃 一翔',
     romaji: 'TANO Kazuto',
-    position: 'しゃちょー',
-    description: '起業しました！',
+    position: 'CEO',
+    //description: '起業しました！',
     longDescription: '頑張ってます！',
     image: CEO,
     hoverImage: CEO2
@@ -21,20 +25,20 @@ const staffData = [
     name: '⻘⽊ 愛⼀郎',
     romaji: 'AOKI Aiitiro',
     position: 'CMO',
-    description: '起業しました！',
+    //description: '起業しました！',
     longDescription: '頑張ってます！',
-    image: 'https://placehold.jp/9179b0/ffffff/150x150.png',
-    hoverImage: 'https://placehold.jp/634d8c/ffffff/150x150.png',
+    image: CMO,
+    hoverImage: CMO2
   },
   {
     id: 3,
     name: '安倍 誠明',
     romaji: 'ABE Tomoaki',
     position: 'COO',
-    description: '起業しました！',
+    //description: '起業しました！',
     longDescription: '頑張ってます！',
-    image: 'https://placehold.jp/9179b0/ffffff/150x150.png',
-    hoverImage: 'https://placehold.jp/634d8c/ffffff/150x150.png',
+    image: COO,
+    hoverImage: COO2
   },
 
 
