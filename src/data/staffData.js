@@ -16,7 +16,7 @@ const staffData = [
     romaji: 'Tano Kazuto',
     position: '代表取締役CEO',
     //description: '起業しました！',
-    longDescription: '頑張ってます！',
+    longDescription: '福井高専 電子情報工学科 卒業\n福井高専 工学部 電気電子情報工学科 編入学\n福井大学大学院 工学研究科 知識社会基礎工学専攻 在学',
     image: CEO,
     hoverImage: CEO2
   },
@@ -26,7 +26,7 @@ const staffData = [
     romaji: 'Aoki Aiichiro',
     position: '取締役CMO',
     //description: '起業しました！',
-    longDescription: '頑張ってます！',
+    longDescription: '福井大学教育学部に在学中。\n\n教育実習を通じて学習困難を抱える子どもたちの支援に関心を持ち、テクノロジーを活用した新しい教育のあり方を探求。\n\n株式会社ミナカノでは、子どもたち一人ひとりに寄り添った教育コンテンツの企画・開発を担当している。',
     image: CMO,
     hoverImage: CMO2
   },
@@ -36,7 +36,7 @@ const staffData = [
     romaji: 'Abe Tomoaki',
     position: '取締役COO',
     //description: '起業しました！',
-    longDescription: '頑張ってます！',
+    longDescription: '福井大学大学院工学研究科博士前期課程産業創成工学専攻に在学中。\n\nプログラミングやシステム開発に精通し、効率的な事業運営の仕組み構築を得意とする。\n\n株式会社ミナカノでは、最新テクノロジーを活用したサービス開発と事業戦略の実行を担当。',
     image: COO,
     hoverImage: COO2
   },
@@ -50,7 +50,7 @@ const staffData = [
     romaji: 'SHIN Romaji', // ローマ字表記（任意）
     position: '役職',
     description: '説明文をここに記入してください。', // カード表示用の短い説明
-    longDescription: '詳細なプロフィールや経歴をここに記入してください。', // モーダル表示用の詳細説明
+    longDescription: '詳細なプロフィールや経歴をここに記入してください。\n\n改行を入れる場合は\\nを使用します。\n\n複数行に分けて表示されます。', // モーダル表示用の詳細説明
     image: '通常時の画像パス', // 例: '/assets/images/staff7.png' または URL
     hoverImage: 'ホバー時の画像パス', // 例: '/assets/images/staff7_hover.png' または URL
     socialLinks: { // ソーシャルメディアリンク（任意）

@@ -79,16 +79,18 @@
   font-size: 2.2rem;
   margin-bottom: 5px;
   color: #333;
+  text-align: left; /* 左寄せを明示的に指定 */
 }
 
 .staff-modal-romaji {
   font-size: 1rem;
   color: #666;
   margin-bottom: 15px;
+  text-align: left; /* 左寄せ */
 }
 
 .staff-modal-position {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #0088cc;
   font-weight: 600;
   margin-bottom: 20px;
@@ -135,6 +137,19 @@
   color: #333;
 }
 
+/* src/components/Member/StaffModal.css に追加 */
+.staff-modal-description p {
+  /*margin-bottom: 12px;*/
+  line-height: 1.8;
+  color: #333;
+}
+
+.staff-modal-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* professionalData.js にも同様の改行対応が必要な場合は同じフォーマットで追加できます */
+
 .staff-modal-articles {
   margin-top: 40px;
   padding-top: 30px;
@@ -180,13 +195,25 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-  from { transform: translateY(30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* レスポンシブデザイン */
@@ -194,23 +221,23 @@
   .staff-modal-content {
     padding: 30px 20px;
   }
-  
+
   .staff-modal-inner {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .staff-modal-image {
     width: 100%;
     height: auto;
     max-width: 300px;
     margin: 0 auto;
   }
-  
+
   .staff-modal-info {
     text-align: center;
   }
-  
+
   .staff-modal-social {
     justify-content: center;
   }
