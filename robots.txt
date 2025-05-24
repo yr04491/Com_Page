@@ -1,3 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
+# 検索エンジンに対する指示
 User-agent: *
-Disallow:
+Allow: /
+
+# サイトマップの場所を教える
+Sitemap: https://minakano.co.jp/sitemap.xml
+
+# クロール頻度の調整（サーバーに負荷をかけすぎないため）
+Crawl-delay: 1
