@@ -5,13 +5,38 @@ import './StaffModal.css';
 const StaffModal = ({ staff, onClose }) => {
   if (!staff) return null;
 
-  // longDescriptionが改行を含む場合に対応するための関数
   const formatDescription = (desc) => {
     if (!desc) return null;
-    // 改行文字で分割し、各行をpタグで囲む
-    return desc.split('\n').map((line, index) => (
-      <p key={index} style={{ whiteSpace: 'pre-wrap' }}>{line}</p>
-    ));
+
+    // 改行文字で分割し、各行をspanタグで囲み、<br>で改行
+    const lines = desc.split('\n');
+    const elements = [];
+
+    lines.forEach((line, index) => {
+      if (line.trim() === '') {
+        // 空行の場合は<br>タグを追加
+        elements.push(<br key={`br-${index}`} />);
+      } else {
+        // HTMLタグを含む場合はdangerouslySetInnerHTMLを使用
+        if (line.includes('<b>') || line.includes('</b>') || line.includes('<u>') || line.includes('<span')) {
+          elements.push(
+            <span
+              key={index}
+              dangerouslySetInnerHTML={{ __html: line }}
+            />
+          );
+        } else {
+          elements.push(<span key={index}>{line}</span>);
+        }
+      }
+
+      // 最後の行以外は改行を追加
+      if (index < lines.length - 1) {
+        elements.push(<br key={`br-after-${index}`} />);
+      }
+    });
+
+    return <div>{elements}</div>;
   };
 
   return (

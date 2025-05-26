@@ -58,8 +58,8 @@ const Character = forwardRef((props, ref) => {
                   />
                 </div>
                 <div className="staff-info">
-                  <h4>{professional.name}</h4>
                   <p className="staff-position">{professional.position}</p>
+                  <h4>{professional.name}</h4>
                   <p className="staff-description">{professional.description}</p>
                 </div>
               </div>

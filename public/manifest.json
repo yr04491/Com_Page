@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ミナカノ",
+  "name": "株式会社ミナカノ",
+  "description": "株式会社ミナカノのホームページです",
   "icons": [
     {
       "src": "favicon.ico",

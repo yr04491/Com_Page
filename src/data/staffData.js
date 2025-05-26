@@ -1,12 +1,12 @@
 // src/data/staffData.js
 // スタッフデータを管理する専用ファイル
 // 今後はこのファイルを編集するだけでスタッフの追加・変更・削除が可能
-import CEO from '../assets/images/TANO.png';
-import CEO2 from '../assets/images/TANO_2.png';
-import CMO from '../assets/images/AI.png';
-import CMO2 from '../assets/images/AI_2.png';
-import COO from '../assets/images/ABE.png';
-import COO2 from '../assets/images/ABE_2.png';
+import TANO from '../assets/images/TANO.png';
+import TANO2 from '../assets/images/TANO_2.png';
+import AI from '../assets/images/AI.png';
+import AI2 from '../assets/images/AI_2.png';
+import ABE from '../assets/images/ABE.png';
+import ABE2 from '../assets/images/ABE_2.png';
 
 
 const staffData = [
@@ -15,10 +15,17 @@ const staffData = [
     name: '田濃 一翔',
     romaji: 'Tano Kazuto',
     position: '代表取締役CEO',
-    //description: '起業しました！',
-    longDescription: '福井高専 電子情報工学科 卒業\n福井高専 工学部 電気電子情報工学科 編入学\n福井大学大学院 工学研究科 知識社会基礎工学専攻 在学',
-    image: CEO,
-    hoverImage: CEO2
+    longDescription: [
+      '私たちは、すべての⼦どもたちが,b>「⾃分に合った学び」</b>に出会える社会を⽬指しています。\n',
+      '⾼専での学びの中で<b>⽣成AI</b>と出会った私たちは、その可能性に⼤きな希望を感じました。\n',
+      'これからの時代、⽣成AIを<b>「使いこなす⼒」</b>は読み書きと同じくらい重要なスキルになると確信しています。\n',
+      'だからこそ、⼦どもたちが早い段階からAIと⾃然に関わり、',
+      '⾃分の学びを<b>⾃分で広げていける環境</b>が必要です。',
+      '私たちは、⽣成AIを活⽤した学習⽀援を通じて、誰もが⾃分らしく学び、',
+      '可能性を伸ばせる未来への“<b>架け橋</b>”となることを⽬指します。',
+    ].join(''),
+    image: TANO,
+    hoverImage: TANO2
   },
   {
     id: 2,
@@ -26,9 +33,20 @@ const staffData = [
     romaji: 'Aoki Aiichiro',
     position: '取締役CMO',
     //description: '起業しました！',
-    longDescription: '福井高専 電子情報工学科 卒業\n福井高専 工学部 電気電子情報工学科 編入学\n福井大学大学院 工学研究科 知識社会基礎工学専攻 在学',
-    image: CMO,
-    hoverImage: CMO2
+    longDescription: [
+      '私たちは、教育の現場で⼦どもたち<b>一人ひとり</b>と向き合う中で、',
+      '「学びにつまずいた⼦どもが、必要な⽀援を受けられずに取り残されている」という厳しい<b>現実</b>に直⾯しました。',
+      '教育現場での経験を通じて、そうした⼦どもたちのまなざしに出会い、私たちは深く⼼を動かされました。',
+      'その経験が、私たちの<b>出発点</b>です。\n',
+      '誰もが⾃分のペースで、⾃分らしく学べること。\n',
+      'そして、困難を抱える⼦どもも、安⼼して学びに向かえること。\n',
+      'そんな<b>「誰⼀⼈取り残さない」</b>個別最適な学びの実現と、包摂的な教育環境の構築を⽬指して、',
+      '私たちはAIと⼈の⼒を融合させた新しい<b>教育のかたち</b>をつくっています。\n',
+      '学ぶことが「できる・できない」ではなく、「楽しい・わかる・つながる」未来へ。\n',
+      '私たちは、すべての⼦どもの<b>可能性を広げ</b>、その⼀歩を⽀え続けます。',
+    ].join(''),
+    image: AI,
+    hoverImage: AI2
   },
   {
     id: 3,
@@ -36,9 +54,9 @@ const staffData = [
     romaji: 'Abe Tomoaki',
     position: '取締役COO',
     //description: '起業しました！',
-    longDescription: '福井高専 電子情報工学科 卒業\n福井高専 工学部 電気電子情報工学科 編入学\n福井大学大学院 工学研究科 知識社会基礎工学専攻 在学',
-    image: COO,
-    hoverImage: COO2
+    //longDescription: '頑張ります！',
+    image: ABE,
+    hoverImage: ABE2
   },
 
 

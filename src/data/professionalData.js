@@ -1,36 +1,43 @@
 // src/data/professionalData.js
 // プロフェッショナルメンバーデータを管理する専用ファイル
+import RYO from '../assets/images/RYO.png';
+import RYO2 from '../assets/images/RYO_2.png';
+import RIN from '../assets/images/RIN.png';
+import RIN2 from '../assets/images/RIN_2.png';
+import KAME from '../assets/images/KAME.png';
+import KAME2 from '../assets/images/KAME_2.png';
+
 
 const professionalData = [
   {
     id: 1,
-    name: '上田 啓太',
-    romaji: 'SATO Keita',
-    position: 'エンジニア',
-    description: 'AIと教育の融合を目指すテクノロジスト',
-    longDescription: '教育系AIシステムの開発に携わり、子どもたちの学びをテクノロジーでサポートすることに情熱を注いでいます。福井大学情報工学科出身。',
-    image: 'https://placehold.jp/3d4070/ffffff/150x150.png',
-    hoverImage: 'https://placehold.jp/2a3050/ffffff/150x150.png',
+    name: '中楯 崚之助',
+    romaji: 'Nakadate Ryonosuke',
+    position: '技術開発',
+    //description: 'AIと教育の融合を目指すテクノロジスト',
+    //longDescription: '教育系AIシステムの開発に携わり、子どもたちの学びをテクノロジーでサポートすることに情熱を注いでいます。\n福井大学情報工学科出身。\n\n新しい技術を教育現場に活用し、すべての子どもたちが自分らしく学べる環境づくりを目指しています。',
+    image: RYO,
+    hoverImage: RYO2,
   },
   {
     id: 2,
-    name: '鈴木 美咲',
-    romaji: 'SUZUKI Misaki',
-    position: '教育コンサルタント',
-    description: '子どもの学びに寄り添うスペシャリスト',
-    longDescription: '教育現場での10年以上の経験を活かし、一人ひとりの子どもに合った学習方法を提案。学習困難を抱える子どもたちへの指導に強みを持つ。',
-    image: 'https://placehold.jp/70406f/ffffff/150x150.png',
-    hoverImage: 'https://placehold.jp/503050/ffffff/150x150.png',
+    name: '吉田 琳汰朗',
+    romaji: 'Yoshida Rintaro',
+    position: '技術開発',
+    //description: '子どもの学びに寄り添うスペシャリスト',
+    //longDescription: '教育現場での10年以上の経験を活かし、一人ひとりの子どもに合った学習方法を提案しています。\n学習困難を抱える子どもたちへの指導に強みを持ち、個別支援の専門家として活動。\n\n子どもたちが自信を持って学習に取り組める環境づくりを大切にしています。',
+    image: RIN,
+    hoverImage: RIN2
   },
   {
     id: 3,
-    name: '山田 拓也',
-    romaji: 'YAMADA Takuya',
-    position: 'コンテンツディレクター',
-    description: '魅力的な教育コンテンツを創造',
-    longDescription: 'エンターテイメント業界での経験を活かし、子どもたちが楽しみながら学べるコンテンツの企画・制作を担当。',
-    image: 'https://placehold.jp/407040/ffffff/150x150.png',
-    hoverImage: 'https://placehold.jp/305030/ffffff/150x150.png',
+    name: '亀岡 侑世',
+    romaji: 'Kameoka Yusei',
+    position: '企画',
+    //description: '魅力的な教育コンテンツを創造',
+    //longDescription: 'エンターテイメント業界での経験を活かし、子どもたちが楽しみながら学べるコンテンツの企画・制作を担当。\nゲーミフィケーションを取り入れた学習体験の設計を得意としています。\n\n「学ぶことは楽しいこと」を実感できるコンテンツづくりに取り組んでいます。',
+    image: KAME,
+    hoverImage: KAME2
   }
 ];
 
