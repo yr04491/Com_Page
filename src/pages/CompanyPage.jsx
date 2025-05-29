@@ -122,23 +122,43 @@ const CompanyPage = () => {
     <div className="company-page">
       <Header ref={headerRef} scrollToSection={scrollToSection} />
       <Hero />
-      <AboutCompany ref={aboutCompanyRef} />
-      <Mission ref={missionRef} />
-      <Vision ref={visionRef} />
-      <CompanyInfo ref={companyInfoRef} />
-      {/*<Officers ref={officersRef} />*/}
-      <History ref={historyRef} />
-      <Services ref={servicesRef} />
-      <Member
-        ref={memberRef}
-        staffRef={staffRef}
-        characterRef={characterRef}
-        activeSubSection={activeMemberSection}
-        scrollToSubSection={scrollToMemberSubSection}
-      />
-      <News ref={newsRef} />
+      <section className="section section-gray">
+        <AboutCompany ref={aboutCompanyRef} />
+      </section>
+      <section className="section section-white">
+        <Mission ref={missionRef} />
+      </section>
+      <section className="section section-gray">
+        <Vision ref={visionRef} />
+      </section>
+      <section className="section section-white">
+        <CompanyInfo ref={companyInfoRef} />
+      </section>
+      {/*<section className="section section-gray">
+        <Officers ref={officersRef} />
+      </section>*/}
+      <section className="section section-gray">
+        <History ref={historyRef} />
+      </section>
+      <section className="section section-white">
+        <Services ref={servicesRef} />
+      </section>
+      <section className="section section-gray">
+        <Member
+          ref={memberRef}
+          staffRef={staffRef}
+          characterRef={characterRef}
+          activeSubSection={activeMemberSection}
+          scrollToSubSection={scrollToMemberSubSection}
+        />
+      </section>
+      <section className="section section-white">
+        <News ref={newsRef} />
+      </section>
       {/* Recruitコンポーネントを削除 */}
-      <Contact ref={contactRef} />
+      <section className="section section-gray">
+        <Contact ref={contactRef} />
+      </section>
       <Footer />
     </div>
   );

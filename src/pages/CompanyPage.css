@@ -41,6 +41,16 @@ body {
   position: relative;
 }
 
+/* 白背景セクション */
+.section-white {
+  background-color: white;
+}
+
+/* 灰色背景セクション */
+.section-gray {
+  background-color: #f8f9fa;
+}
+
 .section h2 {
   font-size: 2.5rem;
   margin-bottom: 40px;

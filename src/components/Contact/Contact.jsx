@@ -14,6 +14,9 @@ const Contact = forwardRef((props, ref) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState(null);
 
+  // 会社のメールアドレス（ここを実際のメールアドレスに変更してください）
+  const COMPANY_EMAIL = 'info@minakano.co.jp';
+
   // フォーム入力の変更ハンドラ
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,28 +26,56 @@ const Contact = forwardRef((props, ref) => {
     }));
   };
 
-  // フォーム送信ハンドラ（仮の実装）
+  // フォーム送信ハンドラ（mailto:リンクを使用）
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError(null);
     
-    // ここでは仮の処理として、送信成功をシミュレート
-    // 実際の送信処理は後から追加できます
-    setTimeout(() => {
-      console.log('フォームデータ:', formData);
-      // フォームをリセット
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
-      setIsSubmitted(true);
+    try {
+      // メール件名を生成
+      const subject = `【株式会社ミナカノ】お問い合わせ - ${formData.name}様より`;
+      
+      // メール本文を生成
+      const body = `
+件名: お問い合わせ
+
+■ お名前
+${formData.name}
+
+■ メールアドレス
+${formData.email}
+
+■ お問い合わせ内容
+${formData.message}
+
+---
+このメールは株式会社ミナカノのWebサイトから送信されました。
+      `.trim();
+
+      // mailto:リンクを生成（URLエンコードが必要）
+      const mailtoLink = `mailto:${COMPANY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // メールクライアントを開く
+      window.location.href = mailtoLink;
+      
+      // 成功状態にセット
+      setTimeout(() => {
+        setIsSubmitted(true);
+        setIsSubmitting(false);
+        
+        // フォームをリセット
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+      }, 1000);
+      
+    } catch (err) {
+      setError('メールクライアントの起動に失敗しました。お手数ですが、直接 ' + COMPANY_EMAIL + ' までご連絡ください。');
       setIsSubmitting(false);
-    }, 1000);
-    
-    // 実際のフォーム送信処理はここに追加します
-    // 例: fetch APIやaxiosを使ったAPIリクエストなど
+    }
   };
 
   return (
@@ -61,7 +92,10 @@ const Contact = forwardRef((props, ref) => {
 
           {isSubmitted ? (
             <div className="form-success">
-              <p>お問い合わせいただきありがとうございます。<br />内容を確認次第、ご連絡いたします。</p>
+              <p>メールクライアントを起動しました。<br />メール送信画面で「送信」ボタンを押してお問い合わせを完了してください。</p>
+              <p style={{fontSize: '0.9rem', color: '#666', marginTop: '15px'}}>
+                メールクライアントが起動しない場合は、直接 <strong>{COMPANY_EMAIL}</strong> までご連絡ください。
+              </p>
               <button 
                 className="form-reset-button" 
                 onClick={() => setIsSubmitted(false)}
@@ -114,7 +148,7 @@ const Contact = forwardRef((props, ref) => {
               
               <div className="form-submit">
                 <button type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? '送信中...' : '送信'}
+                  {isSubmitting ? 'メールクライアント起動中...' : 'メールで送信'}
                 </button>
               </div>
             </form>

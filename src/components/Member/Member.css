@@ -1,8 +1,4 @@
 /*src/components/Member/Member.css*/
-.member-section {
-  background-color: white;
-}
-
 .member-tabs {
   display: flex;
   justify-content: center;

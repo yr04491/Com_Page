@@ -7,7 +7,7 @@ const News = forwardRef((props, ref) => {
       <div className="container">
         <h2>News</h2>
         <div className="section-content">
-          <p>Coming Soon!</p>
+          <p>Coming Soon</p>
         </div>
       </div>
     </section>
