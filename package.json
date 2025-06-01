@@ -1,7 +1,7 @@
 {
   "name": "com_page",
   "version": "0.1.0",
-  "homepage": "https://minakano.co.jp",
+  "homepage": "https://yr04491.github.io/Page_Mina2/",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
