@@ -119,7 +119,7 @@ const Navigation = ({ isOpen, isMobile, activeNav, setActiveNav, handleNavClick,
         </li>
 
         {/* Contactメニュー */}
-        <li
+        {/*<li
           className="nav-item nav-contact"
           onMouseEnter={() => handleMouseEnter('contact')}
           onMouseLeave={() => handleMouseLeave('contact')}
@@ -134,7 +134,7 @@ const Navigation = ({ isOpen, isMobile, activeNav, setActiveNav, handleNavClick,
           >
             Contact
           </a>
-        </li>
+        </li>*/}
       </ul>
     </nav>
   );
