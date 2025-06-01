@@ -64,7 +64,7 @@
 /* iPhone用（より小さい画面） */
 @media (max-width: 440px) {
   .hero {
-    margin-bottom: -170px; /* より大きく下に詰める */
+    margin-bottom: -190px; /* より大きく下に詰める */
     margin-top: -270px;    /* より大きく上に詰める */
   }
 }
@@ -72,7 +72,7 @@
 /* 非常に小さいiPhone用 */
 @media (max-width: 375px) {
   .hero {
-    margin-bottom: -200px; /* さらに大きく調整 */
+    margin-bottom: -210px; /* さらに大きく調整 */
     margin-top: -320px;
   }
 }
