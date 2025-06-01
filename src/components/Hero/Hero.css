@@ -64,15 +64,15 @@
 /* iPhone用（より小さい画面） */
 @media (max-width: 440px) {
   .hero {
-    margin-bottom: -150px; /* より大きく下に詰める */
-    margin-top: -250px;    /* より大きく上に詰める */
+    margin-bottom: -170px; /* より大きく下に詰める */
+    margin-top: -270px;    /* より大きく上に詰める */
   }
 }
 
 /* 非常に小さいiPhone用 */
 @media (max-width: 375px) {
   .hero {
-    margin-bottom: -180px; /* さらに大きく調整 */
-    margin-top: -280px;
+    margin-bottom: -200px; /* さらに大きく調整 */
+    margin-top: -320px;
   }
 }
