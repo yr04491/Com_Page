@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # サイトマップの場所を教える
-Sitemap: https://minakano.co.jp/sitemap.xml
+Sitemap: https://yr04491.github.io/Com_Page/sitemap.xml
 
 # クロール頻度の調整（サーバーに負荷をかけすぎないため）
 Crawl-delay: 1
