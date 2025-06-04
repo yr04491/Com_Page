@@ -1,14 +1,13 @@
 .hero {
   height: 100vh;
-  background-color: #ffffff;
+  background-color: #e3f2fd;
   /* 背景画像を先に設定 */
-  background-image: url('../../assets/images/back_3.png');
-  background-size: 100% auto; /* 画像サイズはそのまま維持 */
+  background-image: url('../../assets/images/back.png');
+  background-size: cover; /* 画面全体をカバー */
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  /* transform: translateY(80px); デスクトップでは削除 */
   justify-content: center;
   color: white;
   text-align: center;
@@ -25,19 +24,6 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-  /* 背景画像と同じサイズ・位置に制限 */
-  background-size: 100% auto; /* 画像サイズと同じに保つ */
-  background-position: center;
-  background-repeat: no-repeat;
-  /* グラデーションを画像の範囲のみに適用するマスク */
-  -webkit-mask: url('../../assets/images/back_3.png');
-  -webkit-mask-size: 100% auto; /* マスクも同じサイズ */
-  -webkit-mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  mask: url('../../assets/images/back_3.png');
-  mask-size: 100% auto;
-  mask-position: center;
-  mask-repeat: no-repeat;
   pointer-events: none;
 }
 
@@ -69,20 +55,20 @@
   font-weight: 500;
   /* やや太字に */
 }
-/* 中画面用（タブレット横向きなど） */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .hero {
-    margin-top: 70px; /* 正の値に変更 */
-    transform: none; /* transformを削除 */
-  }
-}
 
-/* レスポンシブ対応 */
+/* レスポンシブ対応 - モバイル用（768px以下の画面サイズ） */
 @media (max-width: 768px) {
   .hero {
-    margin-top: 60px; /* 正の値でヘッダー分確保 */
-    margin-bottom: -50px; /* 次のセクションとの空白を削除 */
-    height: calc(100vh - 60px); /* ヘッダー分を引いた高さ */
+    /* モバイル用の背景画像に切り替え */
+    background-image: url('../../assets/images/back2.png');
+    /* 画面全体をカバーして空白をなくす */
+    background-size: cover;
+    /* モバイル用ヘッダー高さ分のマージン */
+    margin-top: 80px;
+    /* 次のセクションとの隙間を削除 */
+    margin-bottom: -50px;
+    /* ヘッダー分を除いた高さに調整 */
+    height: calc(100vh - 60px);
   }
 
   .hero h1 {
@@ -91,32 +77,5 @@
 
   .hero p {
     font-size: 1.2rem;
-  }
-}
-
-/* iPhone用（より小さい画面） */
-@media (max-width: 440px) {
-  .hero {
-    margin-top: 60px; /* 正の値に変更 */
-    margin-bottom: -50px; /* 次のセクションとの空白を削除 */
-    height: calc(100vh - 60px);
-  }
-}
-
-/* 非常に小さいiPhone用 */
-@media (max-width: 375px) {
-  .hero {
-    margin-top: 60px; /* 正の値に変更 */
-    margin-bottom: -50px; /* 次のセクションとの空白を削除 */
-    height: calc(100vh - 60px);
-  }
-}
-
-/* iPhone 16 Pro対応（390px × 844px） */
-@media (max-width: 390px) {
-  .hero {
-    margin-top: 60px;
-    margin-bottom: -50px; /* 次のセクションとの空白を削除 */
-    height: calc(100vh - 60px);
   }
 }

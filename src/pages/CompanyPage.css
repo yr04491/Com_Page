@@ -2,7 +2,7 @@
   --primary-color: #0088cc;
   --primary-accent-color: #fa5c2a;
   --secondary-color: #222;
-  --light-color: #f8f9fa;
+  --light-color: #e3f2fd;
   --dark-color: #333;
   --transition: all 0.3s ease;
 }
@@ -53,7 +53,7 @@ body {
 
 /* 灰色背景セクション */
 .section-gray {
-  background-color: #f8f9fa;
+  background-color: #e3f2fd;
 }
 
 .section h2 {
