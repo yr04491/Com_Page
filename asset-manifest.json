@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/Com_Page/static/css/main.f969d124.css",
+    "main.css": "/Com_Page/static/css/main.8284f60a.css",
     "main.js": "/Com_Page/static/js/main.e280c665.js",
     "static/js/453.4afd6ea4.chunk.js": "/Com_Page/static/js/453.4afd6ea4.chunk.js",
+    "static/media/back2.png": "/Com_Page/static/media/back2.95c7eb3e0b6776b5eff2.png",
     "static/media/ABE.png": "/Com_Page/static/media/ABE.a4d36329be521ead8a78.png",
     "static/media/ABE_2.png": "/Com_Page/static/media/ABE_2.0ff61e02d79e0ef44118.png",
     "static/media/KAME.png": "/Com_Page/static/media/KAME.487cfaf1c36b7b0d3271.png",
@@ -17,15 +18,15 @@
     "static/media/RYO.png": "/Com_Page/static/media/RYO.3a87d82ae3aabd62137f.png",
     "static/media/CMO.png": "/Com_Page/static/media/CMO.ad5b2ec522f2578c8d25.png",
     "static/media/CEO.png": "/Com_Page/static/media/CEO.4028cf75d6bda6937fcb.png",
-    "static/media/back_3.png": "/Com_Page/static/media/back_3.607eb015266f0e8cfafc.png",
+    "static/media/back.png": "/Com_Page/static/media/back.607eb015266f0e8cfafc.png",
     "static/media/COO.png": "/Com_Page/static/media/COO.0a0521bead004300a951.png",
     "index.html": "/Com_Page/index.html",
-    "main.f969d124.css.map": "/Com_Page/static/css/main.f969d124.css.map",
+    "main.8284f60a.css.map": "/Com_Page/static/css/main.8284f60a.css.map",
     "main.e280c665.js.map": "/Com_Page/static/js/main.e280c665.js.map",
     "453.4afd6ea4.chunk.js.map": "/Com_Page/static/js/453.4afd6ea4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f969d124.css",
+    "static/css/main.8284f60a.css",
     "static/js/main.e280c665.js"
   ]
 }
