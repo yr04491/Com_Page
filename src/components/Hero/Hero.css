@@ -1,22 +1,52 @@
 .hero {
   height: 100vh;
   background-color: #ffffff;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../assets/images/back_3.png');
-  background-size: 100% auto; /* 幅を100%、高さは自動調整 */
+  /* 背景画像を先に設定 */
+  background-image: url('../../assets/images/back_3.png');
+  background-size: 100% auto; /* 画像サイズはそのまま維持 */
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  transform: translateY(80px);
+  /* transform: translateY(80px); デスクトップでは削除 */
   justify-content: center;
   color: white;
   text-align: center;
+  position: relative;
+  margin-top: 80px; /* ヘッダー分の余白をmarginで確保 */
+}
+
+/* グラデーションを疑似要素で適用 */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  /* 背景画像と同じサイズ・位置に制限 */
+  background-size: 100% auto; /* 画像サイズと同じに保つ */
+  background-position: center;
+  background-repeat: no-repeat;
+  /* グラデーションを画像の範囲のみに適用するマスク */
+  -webkit-mask: url('../../assets/images/back_3.png');
+  -webkit-mask-size: 100% auto; /* マスクも同じサイズ */
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask: url('../../assets/images/back_3.png');
+  mask-size: 100% auto;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  pointer-events: none;
 }
 
 .hero-content {
   max-width: 800px;
   padding: 0 20px;
-  margin-top: 90px; /* この行を追加 */
+  margin-top: 0; /* margin-topを0に調整 */
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
@@ -42,15 +72,17 @@
 /* 中画面用（タブレット横向きなど） */
 @media (max-width: 1024px) and (min-width: 769px) {
   .hero {
-    margin-top: -80px; /* 中画面では適度に上に詰める */
+    margin-top: 0; /* 負のmarginを削除し、適切な値に */
+    transform: translateY(40px); /* 必要に応じて微調整 */
   }
 }
+
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
-
   .hero {
+    margin-top: -120px; /* 負の値を調整してヘッダーとの間隔を調整 */
     margin-bottom: -100px;
-    margin-top: -200px;
+    transform: translateY(0); /* transformを削除または調整 */
   }
 
   .hero h1 {
@@ -61,18 +93,21 @@
     font-size: 1.2rem;
   }
 }
+
 /* iPhone用（より小さい画面） */
 @media (max-width: 440px) {
   .hero {
-    margin-bottom: -190px; /* より大きく下に詰める */
-    margin-top: -270px;    /* より大きく上に詰める */
+    margin-bottom: -190px;
+    margin-top: -200px; /* 値を調整してヘッダーとの間隔を適切に */
+    transform: translateY(0);
   }
 }
 
 /* 非常に小さいiPhone用 */
 @media (max-width: 375px) {
   .hero {
-    margin-bottom: -210px; /* さらに大きく調整 */
-    margin-top: -320px;
+    margin-bottom: -210px;
+    margin-top: -250px; /* 値を調整 */
+    transform: translateY(0);
   }
 }
