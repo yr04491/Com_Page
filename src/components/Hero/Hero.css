@@ -13,7 +13,7 @@
   color: white;
   text-align: center;
   position: relative;
-  margin-top: 80px; /* ヘッダー分の余白をmarginで確保 */
+  margin-top: 80px; /* デスクトップ用 */
 }
 
 /* グラデーションを疑似要素で適用 */
@@ -72,17 +72,17 @@
 /* 中画面用（タブレット横向きなど） */
 @media (max-width: 1024px) and (min-width: 769px) {
   .hero {
-    margin-top: 0; /* 負のmarginを削除し、適切な値に */
-    transform: translateY(40px); /* 必要に応じて微調整 */
+    margin-top: 70px; /* 正の値に変更 */
+    transform: none; /* transformを削除 */
   }
 }
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   .hero {
-    margin-top: -120px; /* 負の値を調整してヘッダーとの間隔を調整 */
-    margin-bottom: -100px;
-    transform: translateY(0); /* transformを削除または調整 */
+    margin-top: 60px; /* 正の値でヘッダー分確保 */
+    margin-bottom: -50px; /* 次のセクションとの空白を削除 */
+    height: calc(100vh - 60px); /* ヘッダー分を引いた高さ */
   }
 
   .hero h1 {
@@ -97,17 +97,26 @@
 /* iPhone用（より小さい画面） */
 @media (max-width: 440px) {
   .hero {
-    margin-bottom: -190px;
-    margin-top: -200px; /* 値を調整してヘッダーとの間隔を適切に */
-    transform: translateY(0);
+    margin-top: 60px; /* 正の値に変更 */
+    margin-bottom: -50px; /* 次のセクションとの空白を削除 */
+    height: calc(100vh - 60px);
   }
 }
 
 /* 非常に小さいiPhone用 */
 @media (max-width: 375px) {
   .hero {
-    margin-bottom: -210px;
-    margin-top: -250px; /* 値を調整 */
-    transform: translateY(0);
+    margin-top: 60px; /* 正の値に変更 */
+    margin-bottom: -50px; /* 次のセクションとの空白を削除 */
+    height: calc(100vh - 60px);
+  }
+}
+
+/* iPhone 16 Pro対応（390px × 844px） */
+@media (max-width: 390px) {
+  .hero {
+    margin-top: 60px;
+    margin-bottom: -50px; /* 次のセクションとの空白を削除 */
+    height: calc(100vh - 60px);
   }
 }

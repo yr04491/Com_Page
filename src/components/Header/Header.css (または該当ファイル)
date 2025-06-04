@@ -1,0 +1,10 @@
+/* ハンバーガーメニューの優先表示 */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  .hamburger-menu {
+    display: block !important;
+  }
+}

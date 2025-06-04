@@ -63,7 +63,17 @@
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   .hamburger {
-    display: block;
+    display: block !important;
+  }
+  
+  /* デスクトップナビを強制的に非表示 */
+  .nav-menu {
+    display: none !important;
+  }
+  
+  /* モバイルメニューが開いた時のナビゲーション表示 */
+  .nav-menu.open {
+    display: flex !important;
   }
   
   /* ハンバーガーメニューが開いた時の背景スクロール防止 */

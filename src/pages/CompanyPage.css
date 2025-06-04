@@ -41,6 +41,11 @@ body {
   position: relative;
 }
 
+/* 最初のセクション（AboutCompany）のトップパディングを削除 */
+.section:first-of-type {
+  padding-top: 50px;
+}
+
 /* 白背景セクション */
 .section-white {
   background-color: white;
@@ -78,6 +83,11 @@ body {
 @media (max-width: 768px) {
   .section {
     padding: 60px 0;
+  }
+  
+  /* スマホで最初のセクションのパディングをさらに削除 */
+  .section:first-of-type {
+    padding-top: 10px;
   }
   
   .section h2 {
