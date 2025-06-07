@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- トップページ（最重要） -->
   <url>
-    <loc>https://yr04491.github.io/Com_Page/</loc>
+    <loc>https://minakano.co.jp/</loc>
     <lastmod>2025-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -10,7 +10,7 @@
   
   <!-- 会社紹介ページ -->
   <url>
-    <loc>https://yr04491.github.io/Com_Page/#about-company</loc>
+    <loc>https://minakano.co.jp/#about-company</loc>
     <lastmod>2025-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -18,7 +18,7 @@
   
   <!-- ミッションページ -->
   <url>
-    <loc>https://yr04491.github.io/Com_Page/#mission</loc>
+    <loc>https://minakano.co.jp/#mission</loc>
     <lastmod>2025-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -26,7 +26,7 @@
   
   <!-- ビジョンページ -->
   <url>
-    <loc>https://yr04491.github.io/Com_Page/#vision</loc>
+    <loc>https://minakano.co.jp/#vision</loc>
     <lastmod>2025-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -34,7 +34,7 @@
   
   <!-- 会社概要ページ -->
   <url>
-    <loc>https://yr04491.github.io/Com_Page/#company-info</loc>
+    <loc>https://minakano.co.jp/#company-info</loc>
     <lastmod>2025-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -42,7 +42,7 @@
   
   <!-- メンバーページ -->
   <url>
-    <loc>https://yr04491.github.io/Com_Page/#member</loc>
+    <loc>https://minakano.co.jp/#member</loc>
     <lastmod>2025-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -50,7 +50,7 @@
   
   <!-- サービスページ -->
   <url>
-    <loc>https://yr04491.github.io/Com_Page/#services</loc>
+    <loc>https://minakano.co.jp/#services</loc>
     <lastmod>2025-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -58,7 +58,7 @@
   
   <!-- ニュースページ -->
   <url>
-    <loc>https://yr04491.github.io/Com_Page/#news</loc>
+    <loc>https://minakano.co.jp/#news</loc>
     <lastmod>2025-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -66,7 +66,7 @@
   
   <!-- お問い合わせページ -->
   <url>
-    <loc>https://yr04491.github.io/Com_Page/#contact</loc>
+    <loc>https://minakano.co.jp/#contact</loc>
     <lastmod>2025-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
