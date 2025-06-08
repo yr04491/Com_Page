@@ -1,8 +1,58 @@
 // src/components/Member/StaffModal.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './StaffModal.css';
 
 const StaffModal = ({ staff, onClose }) => {
+  const [secretUnlocked, setSecretUnlocked] = useState(false);
+  const [keySequence, setKeySequence] = useState([]);
+  
+  // 隠しコマンド: ↑↑↓↓←→←→NR
+  const secretCode = [
+    'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+    'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+    'KeyN', 'KeyR'
+  ];
+
+  useEffect(() => {
+    // 中楯さん（id: 1）のモーダルの時のみキーボードイベントリスナーを追加
+    if (staff && staff.id === 1) {
+      const handleKeyDown = (event) => {
+        const newSequence = [...keySequence, event.code];
+        
+        // シーケンスが長すぎる場合は先頭を削除
+        if (newSequence.length > secretCode.length) {
+          newSequence.shift();
+        }
+        
+        setKeySequence(newSequence);
+        
+        // 隠しコマンドと一致するかチェック
+        if (newSequence.length === secretCode.length) {
+          const isMatch = newSequence.every((key, index) => key === secretCode[index]);
+          if (isMatch) {
+            setSecretUnlocked(true);
+            // 成功時の効果音やアニメーションをここに追加可能
+          }
+        }
+      };
+
+      document.addEventListener('keydown', handleKeyDown);
+      
+      // クリーンアップ関数
+      return () => {
+        document.removeEventListener('keydown', handleKeyDown);
+      };
+    }
+  }, [staff, keySequence]);
+
+  // モーダルが閉じられる時やスタッフが変更される時にリセット
+  useEffect(() => {
+    return () => {
+      setSecretUnlocked(false);
+      setKeySequence([]);
+    };
+  }, [staff]);
+
   if (!staff) return null;
 
   const formatDescription = (desc) => {
@@ -37,6 +87,16 @@ const StaffModal = ({ staff, onClose }) => {
     });
 
     return <div>{elements}</div>;
+  };
+
+  // 表示する説明文を決定
+  const getDisplayDescription = () => {
+    // 中楯さん（id: 1）で隠しコマンドが有効な場合のみ longDescription を表示
+    if (staff.id === 1 && secretUnlocked && staff.longDescription) {
+      return staff.longDescription;
+    }
+    // それ以外は通常の description を表示
+    return staff.description;
   };
 
   return (
@@ -78,8 +138,54 @@ const StaffModal = ({ staff, onClose }) => {
             )}
 
             <div className="staff-modal-description">
-              {formatDescription(staff.longDescription || staff.description)}
+              {formatDescription(getDisplayDescription())}
             </div>
+
+            {/* 隠しコマンド成功時のGO!ボタン表示 */}
+            {staff.id === 1 && secretUnlocked && (
+              <div style={{ 
+                marginTop: '20px', 
+                textAlign: 'center'
+              }}>
+                <style>
+                  {`
+                    @keyframes flashingButton {
+                      0% { opacity: 1; }
+                      50% { opacity: 0.3; }
+                      100% { opacity: 1; }
+                    }
+                  `}
+                </style>
+                <button 
+                  onClick={() => window.open('http://ginyu.fuis.u-fukui.ac.jp/members/2024/nakadate/', '_blank')}
+                  style={{
+                    backgroundColor: 'black',
+                    color: '#4caf50',
+                    border: 'none',
+                    padding: '20px 50px',
+                    borderRadius: '25px',
+                    fontSize: '24px',
+                    fontWeight: 'bold',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 3px 10px rgba(0, 0, 0, 0.3)',
+                    animation: 'flashingButton 1s infinite'
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.backgroundColor = '#333333';
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.animation = 'none';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.backgroundColor = 'black';
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.animation = 'flashingButton 1s infinite';
+                  }}
+                >
+                  GO!
+                </button>
+              </div>
+            )}
           </div>
         </div>
 

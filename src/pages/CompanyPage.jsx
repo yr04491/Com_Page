@@ -36,7 +36,7 @@ const CompanyPage = () => {
   const characterRef = useRef(null);
   const newsRef = useRef(null);
   const recruitRef = useRef(null); // refは念のため残しておく
-  {/*const contactRef = useRef(null);*/ }
+  const contactRef = useRef(null); // Contactのref復活
 
   /**
    * Member セクション内のサブセクションにスクロールする関数
@@ -85,7 +85,7 @@ const CompanyPage = () => {
       news: newsRef,
       // recruitのマッピングは削除しましたが、後から復活できるようにコメントアウトしておくこともできます
       // recruit: recruitRef,
-      /*contact: contactRef*/
+      contact: contactRef // Contactのマッピング復活
     };
 
     // 指定されたセクションに対応するrefを取得
@@ -156,7 +156,10 @@ const CompanyPage = () => {
         <News ref={newsRef} />
       </section>
       {/* Recruitコンポーネントを削除 */}
-      {/* Contactコンポーネントを削除 */}
+      {/* Contactコンポーネント復活 */}
+      <section className="section section-gray">
+        <Contact ref={contactRef} />
+      </section>
       <Footer />
     </div>
   );

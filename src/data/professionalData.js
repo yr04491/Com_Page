@@ -15,7 +15,7 @@ const professionalData = [
     romaji: 'Nakadate Ryonosuke',
     position: '技術開発',
     //description: 'AIと教育の融合を目指すテクノロジスト',
-    //longDescription: '教育系AIシステムの開発に携わり、子どもたちの学びをテクノロジーでサポートすることに情熱を注いでいます。\n福井大学情報工学科出身。\n\n新しい技術を教育現場に活用し、すべての子どもたちが自分らしく学べる環境づくりを目指しています。',
+    //longDescription: 'http://ginyu.fuis.u-fukui.ac.jp/members/2024/nakadate/',
     image: RYO,
     hoverImage: RYO2,
   },

@@ -9,7 +9,8 @@
 }
 
 .recruit-member-item {
-  background-color: #e3f2fd;
+  background-color: #f8fbff;
+  ;
   border-radius: 12px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
   padding: 30px;
@@ -91,7 +92,7 @@
   .recruit-member-item {
     padding: 20px;
   }
-  
+
   .recruit-member-item h3 {
     font-size: 1.5rem;
   }
