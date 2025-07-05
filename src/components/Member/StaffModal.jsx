@@ -4,13 +4,21 @@ import './StaffModal.css';
 
 const StaffModal = ({ staff, onClose }) => {
   const [secretUnlocked, setSecretUnlocked] = useState(false);
+  const [secretUnlockedAT, setSecretUnlockedAT] = useState(false);
   const [keySequence, setKeySequence] = useState([]);
   
-  // 隠しコマンド: ↑↑↓↓←→←→NR
-  const secretCode = [
+  // 隠しコマンド: ↑↑↓↓←→←→NR (中楯さん用)
+  const secretCodeNR = [
     'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
     'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
     'KeyN', 'KeyR'
+  ];
+
+  // 隠しコマンド: ↑↑↓↓←→←→AT (安倍さん用)
+  const secretCodeAT = [
+    'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+    'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+    'KeyA', 'KeyT'
   ];
 
   useEffect(() => {
@@ -20,17 +28,47 @@ const StaffModal = ({ staff, onClose }) => {
         const newSequence = [...keySequence, event.code];
         
         // シーケンスが長すぎる場合は先頭を削除
-        if (newSequence.length > secretCode.length) {
+        if (newSequence.length > secretCodeNR.length) {
           newSequence.shift();
         }
         
         setKeySequence(newSequence);
         
         // 隠しコマンドと一致するかチェック
-        if (newSequence.length === secretCode.length) {
-          const isMatch = newSequence.every((key, index) => key === secretCode[index]);
+        if (newSequence.length === secretCodeNR.length) {
+          const isMatch = newSequence.every((key, index) => key === secretCodeNR[index]);
           if (isMatch) {
             setSecretUnlocked(true);
+            // 成功時の効果音やアニメーションをここに追加可能
+          }
+        }
+      };
+
+      document.addEventListener('keydown', handleKeyDown);
+      
+      // クリーンアップ関数
+      return () => {
+        document.removeEventListener('keydown', handleKeyDown);
+      };
+    }
+    
+    // 安倍さん（id: 3）のモーダルの時のみキーボードイベントリスナーを追加
+    if (staff && staff.id === 3) {
+      const handleKeyDown = (event) => {
+        const newSequence = [...keySequence, event.code];
+        
+        // シーケンスが長すぎる場合は先頭を削除
+        if (newSequence.length > secretCodeAT.length) {
+          newSequence.shift();
+        }
+        
+        setKeySequence(newSequence);
+        
+        // 隠しコマンドと一致するかチェック
+        if (newSequence.length === secretCodeAT.length) {
+          const isMatch = newSequence.every((key, index) => key === secretCodeAT[index]);
+          if (isMatch) {
+            setSecretUnlockedAT(true);
             // 成功時の効果音やアニメーションをここに追加可能
           }
         }
@@ -49,6 +87,7 @@ const StaffModal = ({ staff, onClose }) => {
   useEffect(() => {
     return () => {
       setSecretUnlocked(false);
+      setSecretUnlockedAT(false);
       setKeySequence([]);
     };
   }, [staff]);
@@ -141,7 +180,7 @@ const StaffModal = ({ staff, onClose }) => {
               {formatDescription(getDisplayDescription())}
             </div>
 
-            {/* 隠しコマンド成功時のGO!ボタン表示 */}
+            {/* 隠しコマンド成功時のGO!ボタン表示（中楯さん用） */}
             {staff.id === 1 && secretUnlocked && (
               <div style={{ 
                 marginTop: '20px', 
@@ -180,6 +219,52 @@ const StaffModal = ({ staff, onClose }) => {
                     e.target.style.backgroundColor = 'black';
                     e.target.style.transform = 'translateY(0)';
                     e.target.style.animation = 'flashingButton 1s infinite';
+                  }}
+                >
+                  GO!
+                </button>
+              </div>
+            )}
+
+            {/* 隠しコマンド成功時のボタン表示（安倍さん用） */}
+            {staff.id === 3 && secretUnlockedAT && (
+              <div style={{ 
+                marginTop: '20px', 
+                textAlign: 'center'
+              }}>
+                <style>
+                  {`
+                    @keyframes flashingButtonAT {
+                      0% { opacity: 1; }
+                      50% { opacity: 0.3; }
+                      100% { opacity: 1; }
+                    }
+                  `}
+                </style>
+                <button 
+                  onClick={() => window.open('https://hisac.u-fukui.ac.jp/imlabo/home.html', '_blank')}
+                  style={{
+                    backgroundColor: '#00bcd4',
+                    color: 'white',
+                    border: 'none',
+                    padding: '20px 50px',
+                    borderRadius: '25px',
+                    fontSize: '24px',
+                    fontWeight: 'bold',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 3px 10px rgba(0, 188, 212, 0.3)',
+                    animation: 'flashingButtonAT 1s infinite'
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.backgroundColor = '#00acc1';
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.animation = 'none';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.backgroundColor = '#00bcd4';
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.animation = 'flashingButtonAT 1s infinite';
                   }}
                 >
                   GO!
