@@ -135,29 +135,14 @@ h3::after,
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  color: white;
+  margin-right: 15px;
   text-decoration: none;
-  font-weight: bold;
   transition: transform 0.3s;
+  font-size: 24px;
 }
 
 .social-icon:hover {
   transform: translateY(-3px);
-}
-
-.social-icon.twitter {
-  background-color: #1DA1F2;
-}
-
-.social-icon.linkedin {
-  background-color: #0077B5;
-}
-
-.social-icon.facebook {
-  background-color: #4267B2;
 }
 
 .staff-modal-description {

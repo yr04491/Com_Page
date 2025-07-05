@@ -1,6 +1,8 @@
 // src/components/Member/StaffModal.jsx
 import React, { useEffect, useState } from 'react';
 import './StaffModal.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter, faLinkedin, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 const StaffModal = ({ staff, onClose }) => {
   const [secretUnlocked, setSecretUnlocked] = useState(false);
@@ -159,18 +161,18 @@ const StaffModal = ({ staff, onClose }) => {
             {staff.socialLinks && (
               <div className="staff-modal-social">
                 {staff.socialLinks.twitter && (
-                  <a href={staff.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="social-icon twitter">
-                    <span>X</span>
+                  <a href={staff.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="social-icon">
+                    <FontAwesomeIcon icon={faTwitter} />
                   </a>
                 )}
                 {staff.socialLinks.linkedin && (
-                  <a href={staff.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon linkedin">
-                    <span>in</span>
+                  <a href={staff.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon">
+                    <FontAwesomeIcon icon={faLinkedin} />
                   </a>
                 )}
                 {staff.socialLinks.facebook && (
-                  <a href={staff.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="social-icon facebook">
-                    <span>f</span>
+                  <a href={staff.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="social-icon">
+                    <FontAwesomeIcon icon={faFacebook} />
                   </a>
                 )}
               </div>
