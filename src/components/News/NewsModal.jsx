@@ -28,8 +28,26 @@ const NewsModal = ({ news, onClose }) => {
     });
   };
 
-  // 改行を処理する関数
-  const formatContent = (content) => {
+  // タイトルの改行を処理する関数
+  const formatTitle = (title) => {
+    if (!title) return null;
+    
+    // 特定のタイトルに改行を追加
+    if (title === "福井発！ビジネスプランコンテストグランプリ受賞") {
+      return (
+        <span>
+          福井発！ビジネスプランコンテスト<br />
+          グランプリ受賞
+        </span>
+      );
+    }
+    
+    // その他のタイトルはそのまま表示
+    return title;
+  };
+
+  // 改行と画像を処理する関数
+  const formatContent = (content, images = {}) => {
     if (!content) return null;
     
     const lines = content.split('\n');
@@ -38,6 +56,30 @@ const NewsModal = ({ news, onClose }) => {
     lines.forEach((line, index) => {
       if (line.trim() === '') {
         elements.push(<br key={`br-${index}`} />);
+      } else if (line.startsWith('[IMAGE:') && line.endsWith(']')) {
+        // 画像記法の解析: [IMAGE:imageKey:caption:size] または [IMAGE:imageKey:caption]
+        const imageMatch = line.match(/\[IMAGE:([^:]+):([^:\]]+)(?::([^:\]]+))?\]/);
+        if (imageMatch && images) {
+          const [, imageKey, caption, size = 'medium'] = imageMatch;
+          const imageSrc = images[imageKey];
+          
+          if (imageSrc) {
+            elements.push(
+              <div key={`image-${index}`} className={`news-image-container ${size}`}>
+                <img 
+                  src={imageSrc} 
+                  alt={caption}
+                  className={`news-image news-image-${size}`}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "https://placehold.jp/600x400.png";
+                  }}
+                />
+                <p className="news-image-caption">{caption}</p>
+              </div>
+            );
+          }
+        }
       } else {
         elements.push(<span key={index}>{line}</span>);
       }
@@ -57,11 +99,11 @@ const NewsModal = ({ news, onClose }) => {
         
         <div className="news-modal-header">
           <p className="news-modal-date">{formatDate(news.date)}</p>
-          <h2 className="news-modal-title">{news.title}</h2>
+          <h2 className="news-modal-title">{formatTitle(news.title)}</h2>
         </div>
 
         <div className="news-modal-body">
-          {formatContent(news.content)}
+          {formatContent(news.content, news.images)}
         </div>
       </div>
     </div>

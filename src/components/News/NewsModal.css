@@ -101,6 +101,51 @@
   margin-bottom: 0;
 }
 
+/* ニュース画像のスタイル */
+.news-image-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.news-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.news-image:hover {
+  transform: scale(1.02);
+}
+
+/* 画像サイズ別のスタイル */
+.news-image-small {
+  max-width: 300px;
+}
+
+.news-image-medium {
+  max-width: 450px;
+}
+
+.news-image-large {
+  max-width: 600px;
+}
+
+.news-image-full {
+  max-width: 100%;
+  width: 100%;
+}
+
+.news-image-caption {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -134,6 +179,19 @@
   .news-modal-body {
     font-size: 0.95rem;
   }
+
+  /* モバイルでは画像サイズを調整 */
+  .news-image-large {
+    max-width: 100%;
+  }
+
+  .news-image-medium {
+    max-width: 100%;
+  }
+
+  .news-image-small {
+    max-width: 250px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -147,5 +205,10 @@
 
   .news-modal-date {
     font-size: 0.85rem;
+  }
+
+  /* 小さなスマートフォンでは更にサイズを調整 */
+  .news-image-small {
+    max-width: 200px;
   }
 }

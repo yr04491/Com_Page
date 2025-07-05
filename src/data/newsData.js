@@ -2,36 +2,52 @@
 // ニュースデータを管理する専用ファイル
 // 今後はこのファイルを編集するだけでニュースの追加・変更・削除が可能
 
+// ニュース用画像のインポート（staffData.jsと同じ方式）
+import CEO from '../assets/images/CEO.png';
+import CMO from '../assets/images/CMO.png';
+import COO from '../assets/images/COO.png';
+// 実際のニュース画像が用意できたら、以下のように追加
+// import CONTEST_AWARD from '../assets/images/news/contest-award.jpg';
+// import SABAE_PROJECT from '../assets/images/news/sabae-project.jpg';
+// import FUKUI_UNIVERSITY from '../assets/images/news/fukui-university.jpg';
+
 const newsData = [
   {
     id: 1,
-    title: "会社設立のお知らせ",
-    date: "2024-01-15",
-    content: "この度、弊社が正式に設立されましたことをお知らせいたします。\n\n今後とも、お客様に最高品質のサービスを提供できるよう、全社一丸となって取り組んでまいります。\n\n何かご質問やご要望がございましたら、お気軽にお問い合わせください。"
+    title: "福井発！ビジネスプランコンテストグランプリ受賞",
+    date: "2025-02-08",
+    content: "福井発ビジネスプランコンテストにて、弊社のビジネスプランがグランプリを受賞しました！\n\n[IMAGE:CEO:受賞式でトロフィーを受け取る様子:large]\n\nこの度は多くの皆様にご支援いただき、誠にありがとうございました。今後もより一層努力してまいります。",
+    images: {
+      CEO: CEO  // 画像の参照を定義
+    }
   },
   {
     id: 2,
-    title: "新サービス開始のお知らせ",
-    date: "2024-02-20",
-    content: "お客様のニーズにお応えするため、新しいサービスの提供を開始いたします。\n\n詳細につきましては、後日改めてご案内させていただきます。\n\nご不明な点がございましたら、お気軽にお問い合わせください。"
+    title: "「SABAE STARTUP PROJECT」に採択",
+    date: "2025-04-25",
+    content: "NPO法人エル・コミュニティの「SABAE STARTUP PROJECT」に採択されました！\n\n[IMAGE:CMO:プロジェクト採択通知書:medium]\n\nこのプロジェクトを通じて、地域社会に貢献できるよう取り組んでまいります。",
+    images: {
+      CMO: CMO
+    }
   },
   {
     id: 3,
-    title: "メンバー追加のお知らせ",
-    date: "2024-03-10",
-    content: "チームの拡大に伴い、新しいメンバーが加わりました。\n\nより充実したサービスを提供できるよう、チーム一丸となって取り組んでまいります。\n\n今後ともよろしくお願いいたします。"
+    title: "福井大学発ベンチャーに認知",
+    date: "2025-07-01",
+    content: "国立大学法人福井大学における大学発ベンチャーに認定されました！\n\n[IMAGE:COO:認定証授与式の様子:small]\n\n産学連携の取り組みを通じて、イノベーション創出に貢献してまいります。",
+    images: {
+      COO: COO
+    }
   },
   {
     id: 4,
-    title: "システムメンテナンスのお知らせ",
-    date: "2024-04-05",
-    content: "システムの安定性向上のため、定期メンテナンスを実施いたします。\n\nメンテナンス時間中は、一部サービスがご利用いただけない場合がございます。\n\nご不便をおかけいたしますが、何卒ご理解のほどよろしくお願いいたします。"
-  },
-  {
-    id: 5,
-    title: "新オフィス開設のお知らせ",
-    date: "2024-05-12",
-    content: "事業拡大に伴い、新しいオフィスを開設いたします。\n\nより良いサービスを提供するため、環境を整えて参りました。\n\n新オフィスでも引き続きよろしくお願いいたします。"
+    title: "新技術の研究開発開始",
+    date: "2025-08-15",
+    content: "AIを活用した新技術の研究開発を開始しました。\n\n[IMAGE:CEO:研究開発の様子:full]\n\nこの技術により、より効率的なサービス提供が可能になります。\n\n[IMAGE:CMO:チームミーティング:small]\n\n今後も技術革新に取り組んでまいります。",
+    images: {
+      CEO: CEO,
+      CMO: CMO
+    }
   }
 ];
 
@@ -46,9 +62,67 @@ export default newsData;
 新しいニュースを追加する場合は、以下のテンプレートを使用してください：
 
 {
-  id: 6, // IDは必ず一意の番号にしてください
+  id: 5, // IDは必ず一意の番号にしてください
   title: "ニュースのタイトル",
   date: "2024-06-01", // YYYY-MM-DD形式
-  content: "ニュースの詳細内容をここに記載します。\n\n改行を入れる場合は\\nを使用します。\n\n複数段落に分けて表示されます。"
+  content: "ニュースの詳細内容をここに記載します。\n\n[IMAGE:画像キー:画像のキャプション:サイズ]\n\n改行を入れる場合は\\nを使用します。\n\n複数段落に分けて表示されます。",
+  images: {
+    画像キー: インポートした画像変数  // content内で[IMAGE:画像キー:キャプション:サイズ]として使用
+  }
 }
+
+画像の使用方法：
+1. ファイル上部で画像をインポート: import IMAGE_NAME from '../assets/images/news/image.jpg';
+2. imagesオブジェクトに追加: images: { IMAGE_NAME: IMAGE_NAME }
+3. content内で使用: [IMAGE:IMAGE_NAME:画像のキャプション:サイズ]
+
+画像サイズオプション：
+- small: 300px幅（モバイル向け、小さな画像）
+- medium: 450px幅（デフォルト、バランスの良いサイズ）
+- large: 600px幅（デスクトップ向け、大きな画像）
+- full: 100%幅（コンテナいっぱい、全幅表示）
+
+使用例：
+[IMAGE:CONTEST_AWARD:受賞式の様子:large]
+[IMAGE:PROJECT_PHOTO:プロジェクトの様子:medium]
+[IMAGE:TEAM_PHOTO:チーム写真:small]
+[IMAGE:BANNER_IMAGE:バナー画像:full]
+
+複数画像の例：
+content: "テキスト\n\n[IMAGE:IMAGE1:最初の画像:large]\n\nさらにテキスト\n\n[IMAGE:IMAGE2:2番目の画像:small]\n\n最後のテキスト",
+images: {
+  IMAGE1: IMAGE1,
+  IMAGE2: IMAGE2
+}
+
+実際の使用例（ID4のニュースを参照）：
+- full: メインビジュアルとして画面幅いっぱいに表示
+- small: 補足的な画像として小さく表示
+- medium: 標準的なサイズで表示
+- large: 重要な画像として大きく表示
+
+レスポンシブデザイン：
+- モバイル（768px以下）: large/mediumは100%幅、smallは250px
+- 小さなスマートフォン（480px以下）: smallは200px
+- fullは常に100%幅で表示
 */
+
+/* ===== 元のニュース機能に復活させる手順 =====
+1. News.jsx の修正：
+   - import文のコメントアウトを解除
+   - useState, newsData, NewsModal, getSortedNews を有効化
+   - 関数のコメントアウトを解除
+   - Coming Soon部分を削除
+   - コメントアウトされたニュース機能のHTMLを復活
+   - モーダル部分のコメントアウトを解除
+
+2. News.css の修正：
+   - .coming-soon スタイルを削除
+   - コメントアウトされたニュース機能のスタイルを復活
+
+3. newsData.js は既に準備済み（画像サイズ指定機能付き）
+
+4. NewsModal.jsx と NewsModal.css も準備済み
+
+この手順で、画像サイズ指定機能付きのニュースシステムが復活します。
+=====*/
