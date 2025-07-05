@@ -22,20 +22,26 @@ const staffData = [
     }
   },
   {
-    id: 2,
-    name: '⻘⽊ 愛⼀郎',
-    romaji: 'Aoki Aiichiro',
-    position: '取締役CMO',
-    image: AI,
-    hoverImage: AI2
-  },
-  {
     id: 3,
     name: '安倍 誠明',
     romaji: 'Abe Tomoaki',
     position: '取締役COO',
     image: ABE,
-    hoverImage: ABE2
+    hoverImage: ABE2,
+    socialLinks: {
+      facebook: 'https://www.facebook.com/share/15zUSTqtc8/?mibextid=wwXIfr'
+    }
+  },
+  {
+    id: 2,
+    name: '⻘⽊ 愛⼀郎',
+    romaji: 'Aoki Aiichiro',
+    position: '取締役CLO',
+    image: AI,
+    hoverImage: AI2,
+    socialLinks: {
+      facebook: 'https://www.facebook.com/share/19nGc2Mhr4/?mibextid=wwXIfr'
+    }
   },
 
 
