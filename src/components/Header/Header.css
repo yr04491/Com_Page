@@ -35,6 +35,13 @@
   transition: color 0.3s ease;
 }
 
+/* 例: src/components/Header/Header.css */
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
 .logo:hover {
   color: #0088cc;
 }

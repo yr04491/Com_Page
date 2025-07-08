@@ -3,6 +3,7 @@ import React, { forwardRef, useState, useEffect } from 'react';
 import './Header.css';
 import Navigation from './Navigation';
 import HamburgerMenu from './HamburgerMenu';
+import logoImg from '../../assets/images/logo.png';
 
 const Header = forwardRef(({ scrollToSection }, ref) => {
   const [scrolled, setScrolled] = useState(false);
@@ -36,7 +37,7 @@ const Header = forwardRef(({ scrollToSection }, ref) => {
         });
       }
     };
-    
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [navOpen]);
@@ -49,7 +50,7 @@ const Header = forwardRef(({ scrollToSection }, ref) => {
         setScrolled(isScrolled);
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrolled]);
@@ -115,18 +116,21 @@ const Header = forwardRef(({ scrollToSection }, ref) => {
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`} ref={ref}>
       <div className="navbar-container">
         {/* ロゴ */}
-        <div className="logo" onClick={() => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          closeNav(); // ロゴクリック時もナビゲーションを閉じる
-        }}>
-          Minakano
+        <div
+          className="logo"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            closeNav();
+          }}
+        >
+          <img src={logoImg} alt="Minakanoロゴ" style={{ height: '40px' }} />
         </div>
-        
+
         {/* モバイル用ハンバーガーアイコン */}
         <HamburgerMenu isOpen={navOpen} toggleOpen={toggleNavOpen} />
-        
+
         {/* ナビゲーションメニュー */}
-        <Navigation 
+        <Navigation
           isOpen={navOpen}
           isMobile={isMobile}
           activeNav={activeNav}
