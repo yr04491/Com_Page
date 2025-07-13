@@ -4,6 +4,7 @@ import './Header.css';
 import Navigation from './Navigation';
 import HamburgerMenu from './HamburgerMenu';
 import logoImg from '../../assets/images/logo.png';
+import logoImg2 from '../../assets/images/logo_2.png';
 
 const Header = forwardRef(({ scrollToSection }, ref) => {
   const [scrolled, setScrolled] = useState(false);
@@ -123,7 +124,7 @@ const Header = forwardRef(({ scrollToSection }, ref) => {
             closeNav();
           }}
         >
-          <img src={logoImg} alt="Minakanoロゴ" style={{ height: '40px' }} />
+          <img src={logoImg2} alt="Minakanoロゴ" style={{ height: '40px' }} />
         </div>
 
         {/* モバイル用ハンバーガーアイコン */}
